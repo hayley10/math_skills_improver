@@ -74,8 +74,9 @@ const add = () => {
         sum = c / d;
     };
     
-    result.textContent = sum;
-    if (answer.value == sum) {
+    result.textContent = Math.round((sum + 0.00001) * 100) / 100;
+
+    if (answer.value == result.textContent) {
         info.textContent = `Poprawna odpowiedź`;
         info.classList.add('correct');
     } else {
