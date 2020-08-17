@@ -1,3 +1,4 @@
+//Collecting elements
 const firstNumber = document.querySelector('.firstNumber');
 const secondNumber = document.querySelector('.secondNumber');
 const result = document.querySelector('.result');
@@ -8,7 +9,7 @@ const info = document.querySelector('.info');
 let a;
 let b;
 
-
+//Reload button functionality, random numbers and clearing the form
 const reloadFunction = () => {
     result.textContent = '';
     answer.value = '';
@@ -23,6 +24,7 @@ const reloadFunction = () => {
 
 btn1.addEventListener('click', reloadFunction);
 
+//Adding numbers function
 const add = () => {
     c = firstNumber.textContent *1;
     d = secondNumber.textContent *1;
