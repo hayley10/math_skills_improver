@@ -1,89 +1,94 @@
-//Collecting elements
+/* Collecting elements */
+
 const firstNumber = document.querySelector('.firstNumber');
 const secondNumber = document.querySelector('.secondNumber');
 const result = document.querySelector('.result');
 const answer = document.querySelector('.answer');
-const btn1 = document.querySelector('.reload');
-const btn2 = document.querySelector('.send');
+const btnReload = document.querySelector('.reload');
+const btnSubmit = document.querySelector('.submit');
 const info = document.querySelector('.info');
-const btn3 = document.querySelector('.addBtn');
-const btn4 = document.querySelector('.subtractBtn');
-const btn5 = document.querySelector('.multiplyBtn');
-const btn6 = document.querySelector('.divideBtn');
+const btnAdding = document.querySelector('.addBtn');
+const btnSubtracting = document.querySelector('.subtractBtn');
+const btnMultiplying = document.querySelector('.multiplyBtn');
+const btnDividing = document.querySelector('.divideBtn');
 const skillType = document.querySelector('span');
-let a;
-let b;
 
-//Changing types of mathematical operation
-
-btn3.addEventListener('click', function () {
-    skillType.textContent = 'adding';
+/* resetting form */
+function resetTask() {
     result.textContent = '';
     answer.value = '';
-    info.textContent = '';
-})
-
-btn4.addEventListener('click', function () {
-    skillType.textContent = 'subtracting';
-    result.textContent = '';
-    answer.value = '';
-    info.textContent = '';
-})
-
-btn5.addEventListener('click', function () {
-    skillType.textContent = 'multiplying';
-    result.textContent = '';
-    answer.value = '';
-    info.textContent = '';
-})
-
-btn6.addEventListener('click', function () {
-    skillType.textContent = 'dividing';
-    result.textContent = '';
-    answer.value = '';
-    info.textContent = '';
-})
-
-//Reload button functionality, random numbers and clearing the form
-const reloadFunction = () => {
-    result.textContent = '';
-    answer.value = '';
+    info.textContent = ''; 
     info.classList.remove('correct');
     info.classList.remove('wrong');
-    info.textContent = '';
+}
+
+/* Changing types of mathematical operation */
+
+function skillEventListener(skill) {
+    function toReturn() {
+        skillType.textContent = skill;
+        reloadFunction();
+    }
+    return toReturn;
+}
+
+btnAdding.addEventListener('click', skillEventListener('adding'));
+btnSubtracting.addEventListener('click', skillEventListener('subtracting'));
+btnMultiplying.addEventListener('click', skillEventListener('multiplying'));
+btnDividing.addEventListener('click', skillEventListener('dividing'));
+
+/* Reload button functionality, random numbers */
+
+const reloadFunction = () => {
+    resetTask();
     a = Math.floor(Math.random() * 100);
     b = Math.floor(Math.random() * 100);
-    firstNumber.textContent = a;
+    if (skillType.textContent == "dividing") {
+        /* ensures that result is always an integer */
+        firstNumber.textContent = a * b;
+    } else if (skillType.textContent == "subtracting") {
+        /* ensures the result is always positive */
+        firstNumber.textContent = a + b;
+    } else {
+        firstNumber.textContent = a;
+    }
     secondNumber.textContent = b;
 };
 
-btn1.addEventListener('click', reloadFunction);
+btnReload.addEventListener('click', reloadFunction);
 
-//Adding numbers function
-const add = () => {
+/* Calculating */
+const count = () => {
     c = firstNumber.textContent *1;
     d = secondNumber.textContent *1;
     
     if (skillType.textContent == 'adding') {
-        sum = c + d;
+        countResult = c + d;
     } else if (skillType.textContent == 'subtracting') {
-        sum = c - d;
+        countResult = c - d;
     } else if (skillType.textContent == 'multiplying') {
-        sum = c * d;
+        countResult = c * d;
     } else {
-        sum = c / d;
+        countResult = c / d;
     };
     
-    result.textContent = Math.round((sum + 0.00001) * 100) / 100;
+    result.textContent = countResult;
 
     if (answer.value == result.textContent) {
-        info.textContent = `Poprawna odpowiedź`;
+        info.textContent = `Correct!`;
         info.classList.add('correct');
     } else {
-        info.textContent = `Niestety, spróbuj jeszcze raz`;
+        info.textContent = `Wrong, try again.`;
         info.classList.add('wrong');
     }
 } 
 
-btn2.addEventListener('click', add);
+btnSubmit.addEventListener('click', count);
 
+answer.addEventListener('keyup', function () {
+    if (event.keyCode === 13) {
+        count();
+    }
+});
+
+window.onload = (event) => reloadFunction();
