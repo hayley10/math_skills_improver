@@ -57,6 +57,15 @@ const reloadFunction = () => {
 
 btnReload.addEventListener('click', reloadFunction);
 
+// if (info !== '') {
+// answer.addEventListener('keyup', function () {
+//     if (event.keyCode === 13) {
+//         reloadFunction();
+//     }
+// });
+// };
+
+
 /* Calculating */
 const count = () => {
     c = firstNumber.textContent *1;
@@ -87,7 +96,11 @@ btnSubmit.addEventListener('click', count);
 
 answer.addEventListener('keyup', function () {
     if (event.keyCode === 13) {
+        if (result.textContent == '') {
         count();
+        } else {
+            reloadFunction();
+        }
     }
 });
 
