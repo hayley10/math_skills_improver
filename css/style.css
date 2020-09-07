@@ -12,11 +12,24 @@
 }
 
 body {
-  background: #bbbbbb;
-  margin: 10px;
+  background: #005500;
+}
+
+.main {
+  background: #DCF9D7;
+  margin: 20px auto 0 auto;
+  padding: 10px;
+  border: 3px solid #3d913d;
+  border-radius: 3%;
+  max-width: 550px;
 }
 
 h1, span {
+  color: #3d913d;
+}
+
+label {
+  font-weight: bold;
   color: #3d913d;
 }
 
@@ -49,7 +62,7 @@ div {
 .title {
   font-weight: bold;
   margin-top: 20px;
-  width: 500px;
+  max-width: 550px;
   text-align: justify;
 }
 /*# sourceMappingURL=style.css.map */
