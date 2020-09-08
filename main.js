@@ -11,7 +11,7 @@ const btnAdding = document.querySelector('.addBtn');
 const btnSubtracting = document.querySelector('.subtractBtn');
 const btnMultiplying = document.querySelector('.multiplyBtn');
 const btnDividing = document.querySelector('.divideBtn');
-const skillType = document.querySelector('span');
+const skillType = document.querySelector('.skillType');
 
 /* resetting form */
 function resetTask() {

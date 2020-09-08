@@ -10,33 +10,34 @@
 </head>
 <body>
     <div class="main">
-    <h1>Simple Math Skills Improver</h1>
-    <button type="button" class="btn btn-success addBtn">Add</button>
-    <button type="button" class="btn btn-success subtractBtn">Subtract</button>
-    <button type="button" class="btn btn-success multiplyBtn">Multiply</button>
-    <button type="button" class="btn btn-success divideBtn">Divide</button>
-    <div class="title">You're now training your <span>adding</span> skills. Press reload button to start. Then type in your answer. For different skills types press buttons above.</div>
-    <div>
-        <div class="flexCon">
-        <div class="first">
-        <label for="firstNumber">First number</label>
-        <p class="firstNumber"></p>
-        </div>
-        <div class="second">
-        <label for="secondNumber">Second number</label>
-        <p class="secondNumber"></p>
-        </div>
-        </div>
-        <label for="answer">Answer</label>
-        <input type="text" class="answer">
-        <br>
-        <label for="result">Result</label>
-        <p class="result"></p>
-        <button class="btn btn-success reload"> Reload</button>
-        <button class="btn btn-success submit">Submit</button>
-        <p class="info"></p>
-    </div> 
-</div>
-        <script src='main.js'></script>
+        <h1>Simple Math Skills Improver</h1>
+        <button type="button" class="btn btn-success addBtn">Add</button>
+        <button type="button" class="btn btn-success subtractBtn">Subtract</button>
+        <button type="button" class="btn btn-success multiplyBtn">Multiply</button>
+        <button type="button" class="btn btn-success divideBtn">Divide</button>
+        <div class="title">You're now training your <span class="skillType">adding</span> skills. Press reload button to start. Then type in your answer. For different skills types press buttons above.</div>
+        <div>
+            <div class="flexCon">
+                <div class="first">
+                    <label for="firstNumber">First number</label>
+                    <p class="firstNumber"></p>
+                </div>
+                <div class="second">
+                    <label for="secondNumber">Second number</label>
+                    <p class="secondNumber"></p>
+                </div>
+            </div>
+            <label for="answer">Answer</label>
+            <input type="text" class="answer">
+            <br>
+            <label for="result">Result</label>
+            <p class="result"></p>
+            <button class="btn btn-success reload"> Reload</button>
+            <button class="btn btn-success submit">Submit</button>
+            <p class="float-right mt-2"><span class="scoreTitle">Your score: </span><span>0</span>/10</p>
+            <p class="info"></p>
+        </div> 
+    </div>
+<script src='main.js'></script>
 </body>
 </html>
