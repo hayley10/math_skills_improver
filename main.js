@@ -12,6 +12,7 @@ const btnSubtracting = document.querySelector('.subtractBtn');
 const btnMultiplying = document.querySelector('.multiplyBtn');
 const btnDividing = document.querySelector('.divideBtn');
 const skillType = document.querySelector('.skillType');
+const score = document.querySelector('.score');
 
 /* resetting form */
 function resetTask() {
@@ -57,15 +58,6 @@ const reloadFunction = () => {
 
 btnReload.addEventListener('click', reloadFunction);
 
-// if (info !== '') {
-// answer.addEventListener('keyup', function () {
-//     if (event.keyCode === 13) {
-//         reloadFunction();
-//     }
-// });
-// };
-
-
 /* Calculating */
 const count = () => {
     c = firstNumber.textContent *1;
@@ -90,18 +82,32 @@ const count = () => {
         info.textContent = `Wrong, try again.`;
         info.classList.add('wrong');
     }
+    scoreValue();
 } 
 
 btnSubmit.addEventListener('click', count);
 
+
+//Adding eventListener on 'enter' button
 answer.addEventListener('keyup', function () {
     if (event.keyCode === 13) {
         if (result.textContent == '') {
-        count();
+            count();
         } else {
             reloadFunction();
         }
     }
 });
 
+//Calculating the score
+const scoreValue = () => {
+    let sc = score.textContent*1;
+    if (answer.value == result.textContent) {
+        sc++;
+    }
+    score.textContent = sc;
+}
+
+
+//Displaying ready to go form (reloadFunction) on onload
 window.onload = (event) => reloadFunction();
