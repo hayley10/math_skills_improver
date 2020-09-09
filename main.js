@@ -13,6 +13,7 @@ const btnMultiplying = document.querySelector('.multiplyBtn');
 const btnDividing = document.querySelector('.divideBtn');
 const skillType = document.querySelector('.skillType');
 const score = document.querySelector('.score');
+const mathSymbol = document.querySelector('.mathSymbol');
 
 /* resetting form */
 function resetTask() {
@@ -25,18 +26,19 @@ function resetTask() {
 
 /* Changing types of mathematical operation */
 
-function skillEventListener(skill) {
+function skillEventListener(skill, symbol) {
     function toReturn() {
         skillType.textContent = skill;
+        mathSymbol.textContent = symbol;
         reloadFunction();
     }
     return toReturn;
 }
 
-btnAdding.addEventListener('click', skillEventListener('adding'));
-btnSubtracting.addEventListener('click', skillEventListener('subtracting'));
-btnMultiplying.addEventListener('click', skillEventListener('multiplying'));
-btnDividing.addEventListener('click', skillEventListener('dividing'));
+btnAdding.addEventListener('click', skillEventListener('adding', '+'));
+btnSubtracting.addEventListener('click', skillEventListener('subtracting', '-'));
+btnMultiplying.addEventListener('click', skillEventListener('multiplying', '*'));
+btnDividing.addEventListener('click', skillEventListener('dividing', '/'));
 
 /* Reload button functionality, random numbers */
 
