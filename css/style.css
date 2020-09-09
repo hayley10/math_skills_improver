@@ -68,4 +68,19 @@ div {
   max-width: 550px;
   text-align: justify;
 }
+
+.closingInfo {
+  border: 3px solid #3d913d;
+  border-radius: 3%;
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+  line-height: 10vh;
+  color: #3d913d;
+  font-weight: bold;
+}
+
+.invisible {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

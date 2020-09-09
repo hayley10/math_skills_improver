@@ -14,6 +14,7 @@ const btnDividing = document.querySelector('.divideBtn');
 const skillType = document.querySelector('.skillType');
 const score = document.querySelector('.score');
 const mathSymbol = document.querySelector('.mathSymbol');
+const resultClosingInfo = document.querySelector('.resultClosingInfo');
 
 /* resetting form */
 function resetTask() {
@@ -61,6 +62,8 @@ const reloadFunction = () => {
 btnReload.addEventListener('click', reloadFunction);
 
 /* Calculating */
+let countTimes = 0;
+
 const count = () => {
     c = firstNumber.textContent *1;
     d = secondNumber.textContent *1;
@@ -85,6 +88,7 @@ const count = () => {
         info.classList.add('wrong');
     }
     scoreValue();
+    repeatNumber();
 } 
 
 btnSubmit.addEventListener('click', count);
@@ -109,6 +113,15 @@ const scoreValue = () => {
     }
     score.textContent = sc;
 }
+
+//Setting the number of repeats for overall score calculation
+const repeatNumber = () => {
+    countTimes++;
+    if (countTimes == 2) {
+        resultClosingInfo.textContent = score.textContent;
+    }
+}
+
 
 
 //Displaying ready to go form (reloadFunction) on onload
