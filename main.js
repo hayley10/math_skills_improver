@@ -15,8 +15,11 @@ const skillType = document.querySelector('.skillType');
 const score = document.querySelector('.score');
 const mathSymbol = document.querySelector('.mathSymbol');
 const resultClosingInfo = document.querySelector('.resultClosingInfo');
+const main = document.querySelector('.main');
+const closingInfo = document.querySelector('.closingInfo');
+const btnClose = document.querySelector('.close');
 
-/* resetting form */
+/* Resetting form */
 function resetTask() {
     result.textContent = '';
     answer.value = '';
@@ -94,7 +97,7 @@ const count = () => {
 btnSubmit.addEventListener('click', count);
 
 
-//Adding eventListener on 'enter' button
+/*Adding eventListener on 'enter' button*/
 answer.addEventListener('keyup', function () {
     if (event.keyCode === 13) {
         if (result.textContent == '') {
@@ -105,7 +108,7 @@ answer.addEventListener('keyup', function () {
     }
 });
 
-//Calculating the score
+/*Calculating the score*/
 const scoreValue = () => {
     let sc = score.textContent*1;
     if (answer.value == result.textContent) {
@@ -114,15 +117,31 @@ const scoreValue = () => {
     score.textContent = sc;
 }
 
-//Setting the number of repeats for overall score calculation
+/*Setting the number of repeats for overall score calculation*/
+const buttons = [btnSubmit, btnReload, btnSubtracting, btnAdding, btnDividing, btnMultiplying];
+
 const repeatNumber = () => {
     countTimes++;
     if (countTimes == 2) {
         resultClosingInfo.textContent = score.textContent;
+        closingInfo.classList.remove('invisible');
+        main.classList.add('grey');
+        answer.disabled = 'true';
+        for (let button of buttons) {
+        button.disabled = 'true';
+    }
     }
 }
 
+/*Closing the info box at the end and resetting the counting when other buttons pressed*/
+btnClose.addEventListener('click', function() {
+    window.location.reload();
+})
 
+// const buttons2 = [btnSubtracting, btnAdding, btnDividing, btnMultiplying];
+// for (let button of buttons2) {
+//     countTimes = 0;    
+// }
 
 //Displaying ready to go form (reloadFunction) on onload
 window.onload = (event) => reloadFunction();

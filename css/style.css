@@ -12,7 +12,7 @@
 }
 
 body {
-  background: #005500;
+  background: #1B7523;
 }
 
 .main {
@@ -72,12 +72,28 @@ div {
 .closingInfo {
   border: 3px solid #3d913d;
   border-radius: 3%;
-  width: 100%;
+  width: 500px;
   height: 10vh;
   text-align: center;
-  line-height: 10vh;
+  line-height: 9vh;
   color: #3d913d;
   font-weight: bold;
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #DCF9D7;
+}
+
+.grey {
+  opacity: 0.5;
+}
+
+.close {
+  margin-right: 7px;
+  color: #005500;
 }
 
 .invisible {
