@@ -122,7 +122,7 @@ const buttons = [btnSubmit, btnReload, btnSubtracting, btnAdding, btnDividing, b
 
 const repeatNumber = () => {
     countTimes++;
-    if (countTimes == 2) {
+    if (countTimes == 10) {
         resultClosingInfo.textContent = score.textContent;
         closingInfo.classList.remove('invisible');
         main.classList.add('grey');
@@ -138,10 +138,5 @@ btnClose.addEventListener('click', function() {
     window.location.reload();
 })
 
-// const buttons2 = [btnSubtracting, btnAdding, btnDividing, btnMultiplying];
-// for (let button of buttons2) {
-//     countTimes = 0;    
-// }
-
-//Displaying ready to go form (reloadFunction) on onload
+/*Displaying ready to go form (reloadFunction) on onload*/
 window.onload = (event) => reloadFunction();

@@ -6,9 +6,9 @@
 }
 
 .firstNumber, .secondNumber, .result {
-  border: 1px solid black;
   width: 120px;
   height: 40px;
+  border: 1px solid black;
 }
 
 body {
@@ -16,12 +16,12 @@ body {
 }
 
 .main {
-  background: #DCF9D7;
   margin: 20px auto 0 auto;
   padding: 10px;
+  max-width: 550px;
+  background: #DCF9D7;
   border: 3px solid #3d913d;
   border-radius: 3%;
-  max-width: 550px;
 }
 
 h1, .skillType, label, .scoreTitle {
@@ -63,28 +63,28 @@ div {
 }
 
 .title {
-  font-weight: bold;
   margin-top: 20px;
   max-width: 550px;
+  font-weight: bold;
   text-align: justify;
 }
 
 .closingInfo {
-  border: 3px solid #3d913d;
-  border-radius: 3%;
-  width: 500px;
-  height: 10vh;
-  text-align: center;
-  line-height: 9vh;
-  color: #3d913d;
-  font-weight: bold;
-  z-index: 1;
   position: absolute;
   left: 50%;
   top: 40%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  width: 500px;
+  height: 10vh;
   background: #DCF9D7;
+  border: 3px solid #3d913d;
+  border-radius: 3%;
+  color: #3d913d;
+  text-align: center;
+  line-height: 9vh;
+  font-weight: bold;
+  z-index: 1;
 }
 
 .grey {
