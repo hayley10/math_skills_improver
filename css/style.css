@@ -16,7 +16,7 @@ body {
 }
 
 .main {
-  margin: 20px auto 0 auto;
+  margin: 5px auto 0 auto;
   padding: 10px;
   max-width: 550px;
   background: #DCF9D7;
@@ -75,7 +75,7 @@ div {
   top: 40%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 500px;
+  width: 320px;
   height: 10vh;
   background: #DCF9D7;
   border: 3px solid #3d913d;
@@ -85,6 +85,12 @@ div {
   line-height: 9vh;
   font-weight: bold;
   z-index: 1;
+}
+
+@media (max-width: 280px) {
+  .closingInfo {
+    width: 270px;
+  }
 }
 
 .grey {

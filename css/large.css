@@ -1,0 +1,23 @@
+.closingInfo {
+  width: 500px;
+  height: 10vh;
+  line-height: 9vh;
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+  body {
+    font-size: 1.5rem;
+  }
+  .main {
+    max-width: 700px;
+  }
+  .title {
+    max-width: 700px;
+  }
+  .closingInfo {
+    top: 20%;
+    height: 7vh;
+    line-height: 6vh;
+  }
+}
+/*# sourceMappingURL=large.css.map */
